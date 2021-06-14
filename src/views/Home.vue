@@ -7,7 +7,7 @@
       v-for="index in 1000"
       :key="index"
       v-once>
-      <a href="/about">{{ index }}</a>
+      <router-link to="/about">{{ index }}</router-link>
     </div>
   </div>
 </template>
@@ -22,7 +22,7 @@ export default {
     HelloWorld
   },
   mounted(){
-    this.axios.get('https://dev.bongobongo.ug/api/uof/match/event/ListAllEvents?includePreEvents=true&nrOfPre=20&SportId=1&marketId=1&lastKey=&siteid=1&timeOffset=180')
+    this.axios.get('https://dev.bongobongo.ke/api/uof/match/event/ListAllEvents?includePreEvents=true&nrOfPre=20&SportId=1&marketId=1&lastKey=&siteid=1&timeOffset=180')
   }
 }
 </script>
