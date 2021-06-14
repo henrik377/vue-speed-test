@@ -10,8 +10,10 @@
 <script>
 export default{
   beforeRouteLeave(to, from, next) {
-    this.show=true
-    next()
+    this.show = true
+    setTimeout(function(){
+      next()
+    },100)
   },
   data(){
     return {

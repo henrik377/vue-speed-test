@@ -21,8 +21,10 @@ import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   beforeRouteLeave(to, from, next) {
-    this.ii=1
-    next()
+    this.show = true
+    setTimeout(function(){
+      next()
+    },100)
   },
   data(){
     return {
