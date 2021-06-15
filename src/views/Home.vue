@@ -13,6 +13,12 @@
         <div><span>{{ index }}</span></div>
         <div><span>{{ index +10 }}</span></div>
         <div><span>{{ index + 100 }}</span></div>
+        <div>
+          <a 
+            href="/about"
+            @click.prevent.stop="$router.push('/about')"
+            >Link to about</a>
+        </div>
       </div>
     </div>
     <h1 v-else>Loading...</h1>
