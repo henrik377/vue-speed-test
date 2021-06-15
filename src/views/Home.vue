@@ -29,7 +29,7 @@ export default {
   data(){
     return {
       show: false,
-      ii: 1
+      ii: 1000
     }
   },
   name: 'Home',
@@ -37,7 +37,6 @@ export default {
     HelloWorld
   },
   mounted(){
-    this.ii = 200
     //this.axios.get('https://dev.bongobongo.ke/api/uof/match/event/ListAllEvents?includePreEvents=true&nrOfPre=20&SportId=1&marketId=1&lastKey=&siteid=1&timeOffset=180')
   }
 }
