@@ -9,6 +9,10 @@
         v-for="index in ii"
         :key="index">
         <div>{{ index }}</div>
+        <div><span>Nodes</span></div>
+        <div><span>{{ index }}</span></div>
+        <div><span>{{ index +10 }}</span></div>
+        <div><span>{{ index + 100 }}</span></div>
       </div>
     </div>
     <h1 v-else>Loading...</h1>
