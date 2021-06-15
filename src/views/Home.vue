@@ -8,7 +8,7 @@
       <div
         v-for="index in ii"
         :key="index">
-        <router-link to="/about">{{ index }}</router-link>
+        <div>{{ index }}</div>
       </div>
     </div>
     <h1 v-else>Loading...</h1>
