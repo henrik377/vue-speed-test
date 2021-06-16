@@ -24,12 +24,7 @@
 import MarketItem from '@/components/MarketItem.vue'
 
 export default {
-  beforeRouteLeave(to, from, next) {
-    this.show = true
-    setTimeout(function(){
-      next()
-    },200)
-  },
+  
   data(){
     return {
       show: false,
