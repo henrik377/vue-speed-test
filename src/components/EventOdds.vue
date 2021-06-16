@@ -28,7 +28,7 @@
           :key="market.uid + '_' + sel.id"
           :id="brid+'-'+market.id"
           class="uk-child-width-expand uk-position-relative">
-          <!--MarketSelectionColumn
+          <MarketSelectionColumn
             :key="getselectionid(sel, market.uid)"
             :matchid="theevent.eventMin[0].id"
             :oddsid="sel.id"
@@ -40,11 +40,9 @@
             :eventmin="theevent.eventMin[0]"
             :islive="true"
             :ibs="market.ibs"
-            @add-to-betslip="addtobetslip"
-            @remove-from-betslip="removefrombetslip"
             class="event-market-selection-item"
             :class="sel.col"
-          /-->
+          />
         </div>
       </div> 
     </div>
@@ -52,10 +50,10 @@
 </template>
 
 <script>
-//import MarketSelectionColumn from '@/components/sportsbook/MarketSelectionColumn.vue'
+import MarketSelectionColumn from '@/components/MarketSelectionColumn.vue'
 export default {
   components: {
-    //MarketSelectionColumn,
+    MarketSelectionColumn,
   },
   props: {
     theevent: Object,
