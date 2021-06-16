@@ -2,22 +2,16 @@
   <div class="home">
     <div
       v-if="!show">
-      <div>
-        <router-link to="/about">Kuken</router-link>
-      </div>
       <div
-        v-for="index in ii"
-        :key="index">
-        <div>{{ index }}</div>
-        <div><span>Nodes</span></div>
-        <div><span>{{ index }}</span></div>
-        <div><span>{{ index +10 }}</span></div>
-        <div><span>{{ index + 100 }}</span></div>
-        <div>
-          <a 
-            href="/about"
-            @click.prevent.stop="$router.push('/about')"
-            >Link to about</a>
+        v-for="sport in listObject.sports"
+        :key="sport.id">
+        <div>{{ sport.sportName }}</div>
+        <div
+          v-for="ev in sport.eventMin"
+          :key="ev.id">
+          <MarketItem 
+            :eventmin="ev"
+          />
         </div>
       </div>
     </div>
@@ -27,27 +21,28 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import MarketItem from '@/components/MarketItem.vue'
 
 export default {
   beforeRouteLeave(to, from, next) {
     this.show = true
     setTimeout(function(){
       next()
-    },100)
+    },200)
   },
   data(){
     return {
       show: false,
-      ii: 1000
+      listObject: {}
     }
   },
   name: 'Home',
   components: {
-    HelloWorld
+    MarketItem
   },
-  mounted(){
-    //this.axios.get('https://dev.bongobongo.ke/api/uof/match/event/ListAllEvents?includePreEvents=true&nrOfPre=20&SportId=1&marketId=1&lastKey=&siteid=1&timeOffset=180')
+  async mounted(){
+    let lo = await this.axios.get('https://dev.bongobongo.ke/api/uof/match/event/ListAllEvents?includePreEvents=true&nrOfPre=20&SportId=1&marketId=1&lastKey=&siteid=1&timeOffset=180')
+    this.listObject = lo.data
   }
 }
 </script>
