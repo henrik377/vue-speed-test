@@ -12,6 +12,7 @@
           <MarketItem 
             :eventmin="ev"
           />
+          
         </div>
       </div>
     </div>
